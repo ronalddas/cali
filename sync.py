@@ -43,7 +43,9 @@ class CalenderAPI():
          while True:
           events = service.events().list(calendarId='primary', pageToken=page_token).execute()
           for event in events['items']:
-            print(event)
+            # print(event)
+            for i in event:
+                print i,":",event[i]
           page_token = events.get('nextPageToken')
           if not page_token:
             break

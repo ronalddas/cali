@@ -30,14 +30,22 @@ class CaliWindow(Window):
 
         self.calendar = self.builder.get_object('calendar')
         self.weekly_listbox = self.builder.get_object('weekly_listbox')
+        self.menuAdd = self.builder.get_object('menu_new')
         # self.add_sync_menu_actions(action_group)
         # self.weekly_listbox.insert('test',-1)
 
         self.sync = self.builder.get_object('btnSync')
         # Code for other initialization actions should be added here.
 
+
+    def on_menu_new_activate(self, menuitem, data=None):
+        print("Clicked new!")
+
     def on_calendar_day_selected(self,widget):
         print(widget.get_date())
 
     def on_sync_clicked(self,widget):
          print("You clicked sync")
+
+    def on_menuAdd_activate(self,widget):
+        print("CLICKED!!")
